@@ -15,7 +15,7 @@ const badges = [
   {
     icon: FileCheck,
     title: "Научная валидация",
-    description: "Методы основаны на peer-reviewed исследованиях",
+    description: "Методы основаны на огромных выборках исследований",
   },
   {
     icon: Award,
