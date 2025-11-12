@@ -3,24 +3,24 @@ import { Shield, Lock, FileCheck, Award } from "lucide-react";
 
 const badges = [
   {
-    icon: Shield,
-    title: "GDPR-friendly",
-    description: "Соответствие требованиям защиты данных",
-  },
-  {
-    icon: Lock,
-    title: "Безопасность данных",
-    description: "Шифрование и контроль доступа",
-  },
-  {
     icon: FileCheck,
     title: "Научная валидация",
     description: "Метод основан на проверенных метаанализах",
   },
   {
+    icon: Shield,
+    title: "Безопасность и GDPR",
+    description: "Шифрование, контроль доступа и соответствие требованиям защиты данных",
+  },
+  {
     icon: Award,
     title: "Проверено бизнесом",
     description: "Используют компании 20-500 сотрудников",
+  },
+  {
+    icon: Lock,
+    title: "Быстрое внедрение",
+    description: "Готов к использованию за 1 день без IT-отдела",
   },
 ];
 
