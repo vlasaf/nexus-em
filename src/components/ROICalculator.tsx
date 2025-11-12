@@ -117,9 +117,9 @@ export const ROICalculator = () => {
     field: keyof CalculatorInputs;
     tooltip?: string;
     suffix?: string;
-  }) => <div className="space-y-2">
-      <div className="flex items-center gap-2">
-        <Label htmlFor={field} className="text-sm font-medium">{label}</Label>
+  }) => <div className="space-y-1.5">
+      <div className="flex items-center gap-1.5">
+        <Label htmlFor={field} className="text-xs font-medium">{label}</Label>
         {tooltip && <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -138,35 +138,35 @@ export const ROICalculator = () => {
           </span>}
       </div>
     </div>;
-  return <section id="calculator" className="py-20 bg-muted/30">
+  return <section id="calculator" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          <div className="mb-6 text-center">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
               Рассчитайте экономию для вашей компании
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               Узнайте, сколько вы сможете сэкономить через 1, 3 и 6 месяцев использования
             </p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2">
             {/* Inputs */}
             <Card>
               <CardHeader>
                 <CardTitle>Параметры компании</CardTitle>
                 <CardDescription>Введите данные вашей компании для точного расчета</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase">Основные показатели</h3>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">Основные показатели</h3>
                   <InputField label="Численность штата" field="staff" suffix="чел" />
                   <InputField label="Вакансий в месяц" field="vacanciesPerMonth" suffix="шт" />
                   <InputField label="Полная стоимость сотрудника" field="monthlySalaryCost" suffix="₽/мес" tooltip="Зарплата + налоги + накладные расходы" />
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase">Затраты на найм</h3>
+                <div className="space-y-3">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">Затраты на найм</h3>
                   <InputField label="Внешнее закрытие вакансии" field="externalRecruitmentCost" suffix="₽" />
                   <InputField label="Часов рекрутера на закрытие" field="recruiterHours" suffix="ч" />
                   <InputField label="Ставка рекрутера" field="recruiterRate" suffix="₽/ч" />
@@ -174,8 +174,8 @@ export const ROICalculator = () => {
                   <InputField label="Ставка менеджера" field="managerRate" suffix="₽/ч" />
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase">Метрики эффективности</h3>
+                <div className="space-y-3">
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">Метрики эффективности</h3>
                   <InputField label="Ранняя текучесть (90 дней)" field="earlyTurnover" suffix="%" tooltip="Процент сотрудников, уходящих в первые 90 дней" />
                   <InputField label="Среднее время закрытия (TTF)" field="timeToFill" suffix="дн" tooltip="Среднее количество дней от публикации до закрытия вакансии" />
                 </div>
@@ -183,7 +183,7 @@ export const ROICalculator = () => {
             </Card>
 
             {/* Results */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -200,29 +200,29 @@ export const ROICalculator = () => {
                       <TabsTrigger value="month6">6 месяцев</TabsTrigger>
                     </TabsList>
                     
-                    <TabsContent value="month1" className="mt-6 space-y-4">
+                    <TabsContent value="month1" className="mt-4 space-y-3">
                       <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{formatCurrency(results.month1)}</div>
-                        <p className="mt-2 text-sm text-muted-foreground">Экономия в первый месяц (разгон 50%)</p>
+                        <div className="text-3xl font-bold text-primary">{formatCurrency(results.month1)}</div>
+                        <p className="mt-1 text-xs text-muted-foreground">Экономия в первый месяц (разгон 50%)</p>
                       </div>
                     </TabsContent>
                     
-                    <TabsContent value="month3" className="mt-6 space-y-4">
+                    <TabsContent value="month3" className="mt-4 space-y-3">
                       <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{formatCurrency(results.month3)}</div>
-                        <p className="mt-2 text-sm text-muted-foreground">Накопленная экономия за 3 месяца</p>
+                        <div className="text-3xl font-bold text-primary">{formatCurrency(results.month3)}</div>
+                        <p className="mt-1 text-xs text-muted-foreground">Накопленная экономия за 3 месяца</p>
                       </div>
                     </TabsContent>
                     
-                    <TabsContent value="month6" className="mt-6 space-y-4">
+                    <TabsContent value="month6" className="mt-4 space-y-3">
                       <div className="text-center">
-                        <div className="text-4xl font-bold text-primary">{formatCurrency(results.month6)}</div>
-                        <p className="mt-2 text-sm text-muted-foreground">Накопленная экономия за 6 месяцев</p>
+                        <div className="text-3xl font-bold text-primary">{formatCurrency(results.month6)}</div>
+                        <p className="mt-1 text-xs text-muted-foreground">Накопленная экономия за 6 месяцев</p>
                       </div>
                     </TabsContent>
                   </Tabs>
 
-                  <div className="mt-8 space-y-4">
+                  <div className="mt-4 space-y-3">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Ежемесячная экономия (steady-state)</span>
                       <span className="font-semibold">{formatCurrency(results.total)}</span>
@@ -236,8 +236,8 @@ export const ROICalculator = () => {
                   <CardTitle>Источники экономии</CardTitle>
                   <CardDescription>Разбивка по направлениям эффекта</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-3">
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span>Время скрининга (-40%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.screeningTime)}</span>
@@ -245,7 +245,7 @@ export const ROICalculator = () => {
                     <Progress value={results.screeningTime / results.total * 100} className="h-2" />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span>Внешние затраты (-20%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.externalCosts)}</span>
@@ -253,7 +253,7 @@ export const ROICalculator = () => {
                     <Progress value={results.externalCosts / results.total * 100} className="h-2" />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span>Ранняя текучесть (-30%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.turnoverReduction)}</span>
@@ -261,7 +261,7 @@ export const ROICalculator = () => {
                     <Progress value={results.turnoverReduction / results.total * 100} className="h-2" />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span>Время закрытия вакансии (-20%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.ttfReduction)}</span>
@@ -269,7 +269,7 @@ export const ROICalculator = () => {
                     <Progress value={results.ttfReduction / results.total * 100} className="h-2" />
                   </div>
 
-                  <Button className="w-full" size="lg">
+                  <Button className="w-full mt-2" size="default">
                     <Download className="mr-2 h-4 w-4" />
                     Получить расчет на почту
                   </Button>
