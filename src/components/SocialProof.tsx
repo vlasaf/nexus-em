@@ -25,7 +25,7 @@ const badges = [
 ];
 
 const metrics = [
-  { value: "-20%", label: "Time-to-fill" },
+  { value: "-20%", label: "Время закрытия вакансии" },
   { value: "-30%", label: "Ранняя текучесть" },
   { value: "-40%", label: "Время скрининга" },
 ];
