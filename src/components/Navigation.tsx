@@ -45,10 +45,10 @@ export const Navigation = ({ onOpenDemo }: NavigationProps) => {
   };
 
   const navItems = [
-    { label: "Как работает", id: "how-it-works" },
+    { label: "Возможности", id: "features" },
     { label: "Кейсы", id: "use-cases" },
     { label: "Калькулятор", id: "calculator" },
-    { label: "Возможности", id: "features" },
+    { label: "Как работает", id: "how-it-works" },
     { label: "Интеграции", id: "integrations" },
     { label: "FAQ", id: "faq" },
   ];
