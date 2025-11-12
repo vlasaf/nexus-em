@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Download, HelpCircle, TrendingUp } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-
 interface CalculatorInputs {
   staff: number;
   vacanciesPerMonth: number;
@@ -22,7 +21,6 @@ interface CalculatorInputs {
   timeToFill: number;
   daysInMonth: number;
 }
-
 const defaultInputs: CalculatorInputs = {
   staff: 300,
   vacanciesPerMonth: 5,
@@ -35,9 +33,8 @@ const defaultInputs: CalculatorInputs = {
   managerRate: 3000,
   earlyTurnover: 6,
   timeToFill: 30,
-  daysInMonth: 30,
+  daysInMonth: 30
 };
-
 export const ROICalculator = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>(defaultInputs);
   const [results, setResults] = useState({
@@ -48,27 +45,24 @@ export const ROICalculator = () => {
     total: 0,
     month1: 0,
     month3: 0,
-    month6: 0,
+    month6: 0
   });
-
   useEffect(() => {
     calculateROI();
   }, [inputs]);
-
   const calculateROI = () => {
-    const { 
-      vacanciesPerMonth: H, 
-      monthlySalaryCost: S, 
-      recruiterHours, 
-      recruiterRate, 
-      managerHours, 
+    const {
+      vacanciesPerMonth: H,
+      monthlySalaryCost: S,
+      recruiterHours,
+      recruiterRate,
+      managerHours,
       managerRate,
       externalRecruitmentCost,
       earlyTurnover,
       timeToFill: TTF,
       daysInMonth: d
     } = inputs;
-
     const misHire = 3 * S;
 
     // 1. Screening time savings
@@ -82,14 +76,12 @@ export const ROICalculator = () => {
 
     // 4. Time-to-fill reduction
     const ttfReduction = H * (S / d) * TTF * 0.2;
-
     const total = screeningTime + externalCosts + turnoverReduction + ttfReduction;
 
     // Ramp-up effect
     const month1 = total * 0.5;
     const month3 = total * 2.5;
     const month6 = total * 5.5;
-
     setResults({
       screeningTime,
       externalCosts,
@@ -98,39 +90,37 @@ export const ROICalculator = () => {
       total,
       month1,
       month3,
-      month6,
+      month6
     });
   };
-
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 0
     }).format(value);
   };
-
   const handleInputChange = (field: keyof CalculatorInputs, value: string) => {
     const numValue = parseFloat(value) || 0;
-    setInputs(prev => ({ ...prev, [field]: numValue }));
+    setInputs(prev => ({
+      ...prev,
+      [field]: numValue
+    }));
   };
-
-  const InputField = ({ 
-    label, 
-    field, 
-    tooltip, 
-    suffix 
-  }: { 
-    label: string; 
-    field: keyof CalculatorInputs; 
+  const InputField = ({
+    label,
+    field,
+    tooltip,
+    suffix
+  }: {
+    label: string;
+    field: keyof CalculatorInputs;
     tooltip?: string;
     suffix?: string;
-  }) => (
-    <div className="space-y-2">
+  }) => <div className="space-y-2">
       <div className="flex items-center gap-2">
         <Label htmlFor={field} className="text-sm font-medium">{label}</Label>
-        {tooltip && (
-          <TooltipProvider>
+        {tooltip && <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
                 <HelpCircle className="h-4 w-4 text-muted-foreground cursor-help" />
@@ -139,28 +129,16 @@ export const ROICalculator = () => {
                 <p className="text-sm">{tooltip}</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider>
-        )}
+          </TooltipProvider>}
       </div>
       <div className="relative">
-        <Input
-          id={field}
-          type="number"
-          value={inputs[field]}
-          onChange={(e) => handleInputChange(field, e.target.value)}
-          className="pr-12"
-        />
-        {suffix && (
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
+        <Input id={field} type="number" value={inputs[field]} onChange={e => handleInputChange(field, e.target.value)} className="pr-12" />
+        {suffix && <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
             {suffix}
-          </span>
-        )}
+          </span>}
       </div>
-    </div>
-  );
-
-  return (
-    <section id="calculator" className="py-20 bg-muted/30">
+    </div>;
+  return <section id="calculator" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
@@ -184,12 +162,7 @@ export const ROICalculator = () => {
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase">Основные показатели</h3>
                   <InputField label="Численность штата" field="staff" suffix="чел" />
                   <InputField label="Вакансий в месяц" field="vacanciesPerMonth" suffix="шт" />
-                  <InputField 
-                    label="Полная стоимость сотрудника" 
-                    field="monthlySalaryCost" 
-                    suffix="₽/мес"
-                    tooltip="Зарплата + налоги + накладные расходы"
-                  />
+                  <InputField label="Полная стоимость сотрудника" field="monthlySalaryCost" suffix="₽/мес" tooltip="Зарплата + налоги + накладные расходы" />
                 </div>
 
                 <div className="space-y-4">
@@ -203,18 +176,8 @@ export const ROICalculator = () => {
 
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase">Метрики эффективности</h3>
-                  <InputField 
-                    label="Ранняя текучесть (90 дней)" 
-                    field="earlyTurnover" 
-                    suffix="%"
-                    tooltip="Процент сотрудников, уходящих в первые 90 дней"
-                  />
-                  <InputField 
-                    label="Среднее время закрытия (TTF)" 
-                    field="timeToFill" 
-                    suffix="дн"
-                    tooltip="Среднее количество дней от публикации до закрытия вакансии"
-                  />
+                  <InputField label="Ранняя текучесть (90 дней)" field="earlyTurnover" suffix="%" tooltip="Процент сотрудников, уходящих в первые 90 дней" />
+                  <InputField label="Среднее время закрытия (TTF)" field="timeToFill" suffix="дн" tooltip="Среднее количество дней от публикации до закрытия вакансии" />
                 </div>
               </CardContent>
             </Card>
@@ -279,7 +242,7 @@ export const ROICalculator = () => {
                       <span>Время скрининга (-40%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.screeningTime)}</span>
                     </div>
-                    <Progress value={(results.screeningTime / results.total) * 100} className="h-2" />
+                    <Progress value={results.screeningTime / results.total * 100} className="h-2" />
                   </div>
 
                   <div className="space-y-3">
@@ -287,7 +250,7 @@ export const ROICalculator = () => {
                       <span>Внешние затраты (-20%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.externalCosts)}</span>
                     </div>
-                    <Progress value={(results.externalCosts / results.total) * 100} className="h-2" />
+                    <Progress value={results.externalCosts / results.total * 100} className="h-2" />
                   </div>
 
                   <div className="space-y-3">
@@ -295,15 +258,15 @@ export const ROICalculator = () => {
                       <span>Ранняя текучесть (-30%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.turnoverReduction)}</span>
                     </div>
-                    <Progress value={(results.turnoverReduction / results.total) * 100} className="h-2" />
+                    <Progress value={results.turnoverReduction / results.total * 100} className="h-2" />
                   </div>
 
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-sm">
-                      <span>Time-to-fill (-20%)</span>
+                      <span>Время закрытия вакансии (-20%)</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.ttfReduction)}</span>
                     </div>
-                    <Progress value={(results.ttfReduction / results.total) * 100} className="h-2" />
+                    <Progress value={results.ttfReduction / results.total * 100} className="h-2" />
                   </div>
 
                   <Button className="w-full" size="lg">
@@ -316,6 +279,5 @@ export const ROICalculator = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
