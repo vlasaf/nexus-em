@@ -1,12 +1,46 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Hero } from "@/components/Hero";
+import { SocialProof } from "@/components/SocialProof";
+import { ProblemSolution } from "@/components/ProblemSolution";
+import { ROICalculator } from "@/components/ROICalculator";
+import { UseCases } from "@/components/UseCases";
+import { HowItWorks } from "@/components/HowItWorks";
+import { Features } from "@/components/Features";
+import { Integrations } from "@/components/Integrations";
+import { Security } from "@/components/Security";
+import { Personas } from "@/components/Personas";
+import { FAQ } from "@/components/FAQ";
+import { FinalCTA } from "@/components/FinalCTA";
+import { Footer } from "@/components/Footer";
+import { DemoModal } from "@/components/DemoModal";
 
 const Index = () => {
+  const [demoModalOpen, setDemoModalOpen] = useState(false);
+
+  const scrollToCalculator = () => {
+    document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Hero 
+        onOpenDemo={() => setDemoModalOpen(true)} 
+        onOpenCalculator={scrollToCalculator}
+      />
+      <SocialProof />
+      <ProblemSolution />
+      <ROICalculator />
+      <UseCases />
+      <HowItWorks />
+      <Features />
+      <Integrations />
+      <Security />
+      <Personas />
+      <FAQ />
+      <FinalCTA onOpenDemo={() => setDemoModalOpen(true)} />
+      <Footer />
+      
+      <DemoModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
     </div>
   );
 };
