@@ -48,7 +48,7 @@ export const Navigation = ({ onOpenDemo }: NavigationProps) => {
     { label: "Возможности", id: "features" },
     { label: "Кейсы", id: "use-cases" },
     { label: "Калькулятор", id: "calculator" },
-    { label: "Как работает", id: "how-it-works" },
+    { label: "Внедрение", id: "how-it-works" },
     { label: "Интеграции", id: "integrations" },
     { label: "FAQ", id: "faq" },
   ];
