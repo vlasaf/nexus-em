@@ -24,12 +24,6 @@ const badges = [
   },
 ];
 
-const metrics = [
-  { value: "-20%", label: "Время закрытия вакансии" },
-  { value: "-30%", label: "Ранняя текучесть" },
-  { value: "-40%", label: "Время скрининга" },
-];
-
 export const SocialProof = () => {
   return (
     <section className="py-16 bg-background border-y">
@@ -39,16 +33,6 @@ export const SocialProof = () => {
             <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
               Доверие и результаты
             </p>
-          </div>
-
-          {/* Metrics */}
-          <div className="mb-12 grid grid-cols-3 gap-4 md:gap-8">
-            {metrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-primary md:text-4xl">{metric.value}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{metric.label}</div>
-              </div>
-            ))}
           </div>
 
           {/* Trust Badges */}
