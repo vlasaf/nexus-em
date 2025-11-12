@@ -24,16 +24,16 @@ const Index = () => {
         onOpenCalculator={scrollToCalculator}
       />
       <div className="animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-        <UseCases />
+        <Features />
       </div>
       <div className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-        <ROICalculator />
+        <UseCases />
       </div>
       <div className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
-        <HowItWorks />
+        <ROICalculator />
       </div>
       <div className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
-        <Features />
+        <HowItWorks />
       </div>
       <div className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
         <Integrations />
