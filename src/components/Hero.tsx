@@ -20,11 +20,11 @@ export const Hero = ({
           
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Точное{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-психопрофилирование</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">психопрофилирование</span>
             {" "}сотрудников и кандидатов для умных HR-решений
           </h1>
           
-          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Глубокий анализ личности • AI-расшифровка характеристик • Прогноз совместимости • Персональные рекомендации по работе с каждым • Снижение текучести и ошибок найма</p>
+          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Научно валидированная методология оценки личности • AI-расшифровка характеристик и прогноз совместимости • Персональные рекомендации по работе с каждым • Снижение текучести и ошибок найма</p>
           
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" onClick={onOpenDemo} className="group w-full sm:w-auto">
