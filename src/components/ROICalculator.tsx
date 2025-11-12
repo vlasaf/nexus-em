@@ -51,7 +51,6 @@ export const ROICalculator = () => {
     const timer = setTimeout(() => {
       calculateROI();
     }, 500);
-    
     return () => clearTimeout(timer);
   }, [inputs]);
   const calculateROI = () => {
@@ -228,7 +227,7 @@ export const ROICalculator = () => {
 
                   <div className="mt-4 space-y-3">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Ежемесячная экономия (steady-state)</span>
+                      <span className="text-muted-foreground">Ежемесячная экономия</span>
                       <span className="font-semibold">{formatCurrency(results.total)}</span>
                     </div>
                   </div>
