@@ -26,25 +26,35 @@ const badges = [
 
 export const SocialProof = () => {
   return (
-    <section className="py-16 bg-background border-y">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+      
+      <div className="container mx-auto px-4 relative">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+          <div className="mb-12 text-center animate-fade-in">
+            <h2 className="text-3xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Доверие и результаты
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Научно обоснованное решение для современного HR
             </p>
           </div>
 
           {/* Trust Badges */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {badges.map((badge, index) => (
-              <Card key={index} className="border-muted">
+              <Card 
+                key={index} 
+                className="border-muted/50 bg-card/50 backdrop-blur-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <CardContent className="flex flex-col items-center p-6 text-center">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <badge.icon className="h-5 w-5" />
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 text-primary group-hover:scale-110 transition-transform duration-300">
+                    <badge.icon className="h-6 w-6" />
                   </div>
-                  <div className="text-sm font-semibold mb-1">{badge.title}</div>
-                  <div className="text-xs text-muted-foreground">{badge.description}</div>
+                  <h3 className="text-base font-semibold mb-2">{badge.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{badge.description}</p>
                 </CardContent>
               </Card>
             ))}
