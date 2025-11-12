@@ -18,9 +18,9 @@ export const Hero = ({
             AI-копилот для HR-решений
           </div>
           
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+          <h1 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl animate-fade-in break-words hyphens-auto" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             Точное{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">психопрофилирование</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent break-words">психопрофилирование</span>
             {" "}сотрудников и кандидатов для умных HR-решений
           </h1>
           
