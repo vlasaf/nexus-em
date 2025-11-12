@@ -47,15 +47,15 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-24 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
+          <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Как работает система
+              Возможности платформы
             </h2>
-            <p className="text-lg text-muted-foreground">
-              От научного психопрофилирования до AI-расшифровки и персональных рекомендаций
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Полный набор инструментов для управления персоналом на основе AI
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export const Features = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className={`group transition-all hover:shadow-md ${
+                className={`group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
                   feature.highlight 
                     ? 'border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5 hover:border-primary' 
                     : 'hover:border-primary/30'
@@ -71,11 +71,11 @@ export const Features = () => {
               >
                 <CardHeader>
                   <div className="flex items-start justify-between gap-2">
-                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-lg ${
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-lg transition-all duration-300 ${
                       feature.highlight 
-                        ? 'bg-gradient-to-br from-primary to-accent text-primary-foreground' 
-                        : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground'
-                    } transition-colors`}>
+                        ? 'bg-gradient-to-br from-primary to-accent text-primary-foreground group-hover:scale-110' 
+                        : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110'
+                    }`}>
                       <feature.icon className="h-6 w-6" />
                     </div>
                     {feature.highlight && (

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { ROICalculator } from "@/components/ROICalculator";
 import { UseCases } from "@/components/UseCases";
@@ -19,31 +20,41 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Navigation onOpenDemo={() => setDemoModalOpen(true)} />
+      
       <Hero 
         onOpenDemo={() => setDemoModalOpen(true)} 
         onOpenCalculator={scrollToCalculator}
       />
-      <div className="animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+      
+      <div id="features" className="animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
         <Features />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+      
+      <div id="use-cases" className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
         <UseCases />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+      
+      <div id="calculator" className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
         <ROICalculator />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
+      
+      <div id="how-it-works" className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
         <HowItWorks />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+      
+      <div id="integrations" className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
         <Integrations />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
+      
+      <div id="faq" className="animate-fade-in" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
         <FAQ />
       </div>
+      
       <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
         <FinalCTA onOpenDemo={() => setDemoModalOpen(true)} />
       </div>
+      
       <Footer />
       
       <DemoModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />

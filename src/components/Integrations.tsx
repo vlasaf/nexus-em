@@ -12,23 +12,23 @@ const integrations = [
 
 export const Integrations = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-background scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
+          <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Интеграции с вашими системами
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Работаем через API и импорт данных — минимум ручной работы
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {integrations.map((integration, index) => (
-              <Card key={index} className="group transition-all hover:shadow-md hover:border-primary/30">
+              <Card key={index} className="group transition-all duration-300 hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
                 <CardContent className="flex items-start gap-4 p-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
                     <integration.icon className="h-6 w-6" />
                   </div>
                   <div>

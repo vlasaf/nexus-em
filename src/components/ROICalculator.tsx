@@ -175,21 +175,21 @@ export const ROICalculator = () => {
       }));
     }
   };
-  return <section id="calculator" className="py-12 bg-muted/30">
+  return <section id="calculator" className="py-24 bg-muted/30 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-6 text-center">
-            <h2 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">
+          <div className="mb-8 text-center">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Рассчитайте экономию для вашей компании
             </h2>
-            <p className="text-base text-muted-foreground">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Узнайте, сколько вы сможете сэкономить через 1, 3 и 6 месяцев использования
             </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
             {/* Inputs */}
-            <Card className="hover:shadow-lg">
+            <Card className="transition-all duration-300 hover:shadow-xl">
               <CardHeader>
                 <CardTitle>Параметры компании</CardTitle>
                 <CardDescription>Введите данные вашей компании для точного расчета</CardDescription>
@@ -220,8 +220,8 @@ export const ROICalculator = () => {
             </Card>
 
             {/* Results */}
-            <div className="space-y-4">
-              <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-lg">
+            <div className="space-y-6">
+              <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5 transition-all duration-300 hover:shadow-xl">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5 text-primary" />
@@ -268,7 +268,7 @@ export const ROICalculator = () => {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg">
+              <Card className="transition-all duration-300 hover:shadow-xl">
                 <CardHeader>
                   <CardTitle>Источники экономии</CardTitle>
                   <CardDescription>Разбивка по направлениям эффекта</CardDescription>

@@ -34,26 +34,26 @@ const cases = [
 
 export const UseCases = () => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-24 bg-muted/30 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
+          <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Кейсы использования
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               От найма до управления талантами — AI помогает на всех этапах
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2">
             {cases.map((useCase, index) => (
-              <Card key={index} className="group transition-all hover:shadow-lg hover:border-primary/50">
+              <Card key={index} className="group transition-all duration-300 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1">
                 <CardHeader>
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
                     <useCase.icon className="h-6 w-6" />
                   </div>
-                  <CardTitle>{useCase.title}</CardTitle>
+                  <CardTitle className="text-xl">{useCase.title}</CardTitle>
                   <CardDescription className="text-destructive/80">
                     <strong>Задача:</strong> {useCase.problem}
                   </CardDescription>

@@ -7,7 +7,7 @@ interface FinalCTAProps {
 
 export const FinalCTA = ({ onOpenDemo }: FinalCTAProps) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary to-accent py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary to-accent py-24">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCIgc3Ryb2tlPSJoc2woMCAwJSAxMDAlIC8gMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
       
       <div className="container relative mx-auto px-4">

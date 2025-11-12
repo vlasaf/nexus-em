@@ -50,10 +50,10 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-24 bg-muted/30 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl">
-          <div className="mb-12 text-center">
+          <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Часто задаваемые вопросы
             </h2>
