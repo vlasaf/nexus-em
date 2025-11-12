@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { Hero } from "@/components/Hero";
-import { SocialProof } from "@/components/SocialProof";
-import { ProblemSolution } from "@/components/ProblemSolution";
 import { ROICalculator } from "@/components/ROICalculator";
 import { UseCases } from "@/components/UseCases";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -29,27 +27,21 @@ const Index = () => {
         <UseCases />
       </div>
       <div className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-        <SocialProof />
-      </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
-        <ProblemSolution />
-      </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
         <ROICalculator />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+      <div className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
         <HowItWorks />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
+      <div className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
         <Features />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+      <div className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
         <Integrations />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'both' }}>
+      <div className="animate-fade-in" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
         <FAQ />
       </div>
-      <div className="animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
+      <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
         <FinalCTA onOpenDemo={() => setDemoModalOpen(true)} />
       </div>
       <Footer />
