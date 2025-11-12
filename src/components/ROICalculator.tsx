@@ -189,7 +189,7 @@ export const ROICalculator = () => {
 
           <div className="grid gap-6 lg:grid-cols-2">
             {/* Inputs */}
-            <Card>
+            <Card className="hover:shadow-lg">
               <CardHeader>
                 <CardTitle>Параметры компании</CardTitle>
                 <CardDescription>Введите данные вашей компании для точного расчета</CardDescription>
@@ -221,7 +221,7 @@ export const ROICalculator = () => {
 
             {/* Results */}
             <div className="space-y-4">
-              <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5">
+              <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5 text-primary" />
@@ -268,7 +268,7 @@ export const ROICalculator = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="hover:shadow-lg">
                 <CardHeader>
                   <CardTitle>Источники экономии</CardTitle>
                   <CardDescription>Разбивка по направлениям эффекта</CardDescription>

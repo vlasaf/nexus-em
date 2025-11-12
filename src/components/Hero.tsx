@@ -13,20 +13,20 @@ export const Hero = ({
       
       <div className="container relative mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary animate-fade-in">
             <Play className="h-4 w-4" />
             AI-копилот для HR-решений
           </div>
           
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl animate-fade-in" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             Точное{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">психопрофилирование</span>
             {" "}сотрудников и кандидатов для умных HR-решений
           </h1>
           
-          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Научно валидированная методология оценки личности • AI-расшифровка характеристик и прогноз совместимости • Персональные рекомендации по работе с каждым • Снижение текучести и ошибок найма</p>
+          <p className="mb-8 text-lg text-muted-foreground sm:text-xl animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>Научно валидированная методология оценки личности • AI-расшифровка характеристик и прогноз совместимости • Персональные рекомендации по работе с каждым • Снижение текучести и ошибок найма</p>
           
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
             <Button size="lg" onClick={onOpenDemo} className="group w-full sm:w-auto">
               Запросить демо
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -38,18 +38,18 @@ export const Hero = ({
             </Button>
           </div>
           
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+            <div className="rounded-xl border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
               <div className="mb-2 text-3xl font-bold text-primary">-30%</div>
               <div className="text-sm text-muted-foreground">Ранняя текучесть в первые 90 дней</div>
             </div>
             
-            <div className="rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+            <div className="rounded-xl border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
               <div className="mb-2 text-3xl font-bold text-primary">-20%</div>
               <div className="text-sm text-muted-foreground">Время закрытия вакансии</div>
             </div>
             
-            <div className="rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+            <div className="rounded-xl border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
               <div className="mb-2 text-3xl font-bold text-primary">-40%</div>
               <div className="text-sm text-muted-foreground">Время скрининга кандидатов</div>
             </div>
