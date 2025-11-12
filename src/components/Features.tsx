@@ -79,9 +79,8 @@ export const Features = () => {
                       <feature.icon className="h-6 w-6" />
                     </div>
                     {feature.highlight && (
-                      <Badge variant="default" className="bg-gradient-to-r from-primary to-accent border-0 shadow-sm">
-                        <Star className="h-3 w-3 mr-1 fill-current" />
-                        Ключевая
+                      <Badge variant="default" className="bg-gradient-to-r from-primary to-accent border-0 shadow-sm p-1.5">
+                        <Star className="h-3.5 w-3.5 fill-current" />
                       </Badge>
                     )}
                   </div>
