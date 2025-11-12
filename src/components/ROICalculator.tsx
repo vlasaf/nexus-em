@@ -48,7 +48,11 @@ export const ROICalculator = () => {
     month6: 0
   });
   useEffect(() => {
-    calculateROI();
+    const timer = setTimeout(() => {
+      calculateROI();
+    }, 500);
+    
+    return () => clearTimeout(timer);
   }, [inputs]);
   const calculateROI = () => {
     const {
