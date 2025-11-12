@@ -104,11 +104,23 @@ export const ROICalculator = () => {
     }).format(value);
   };
   const handleInputChange = (field: keyof CalculatorInputs, value: string) => {
-    const numValue = parseFloat(value) || 0;
-    setInputs(prev => ({
-      ...prev,
-      [field]: numValue
-    }));
+    // Разрешаем пустую строку для удобного редактирования
+    if (value === '') {
+      setInputs(prev => ({
+        ...prev,
+        [field]: 0
+      }));
+      return;
+    }
+    
+    const numValue = parseFloat(value);
+    // Обновляем только если это валидное число
+    if (!isNaN(numValue) && numValue >= 0) {
+      setInputs(prev => ({
+        ...prev,
+        [field]: numValue
+      }));
+    }
   };
   const InputField = ({
     label,
@@ -135,7 +147,14 @@ export const ROICalculator = () => {
           </TooltipProvider>}
       </div>
       <div className="relative">
-        <Input id={field} type="number" value={inputs[field]} onChange={e => handleInputChange(field, e.target.value)} className="pr-12" />
+        <Input 
+          id={field} 
+          type="number" 
+          value={inputs[field] === 0 ? '' : inputs[field]} 
+          onChange={e => handleInputChange(field, e.target.value)} 
+          className="pr-12"
+          min="0"
+        />
         {suffix && <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
             {suffix}
           </span>}
