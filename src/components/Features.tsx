@@ -1,11 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { 
   Users,
   MessageSquare,
   Target, 
   AlertTriangle, 
   BarChart4, 
-  Repeat 
+  Repeat,
+  Star
 } from "lucide-react";
 
 const features = [
@@ -68,18 +70,22 @@ export const Features = () => {
                 }`}
               >
                 <CardHeader>
-                  <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg ${
-                    feature.highlight 
-                      ? 'bg-gradient-to-br from-primary to-accent text-primary-foreground' 
-                      : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground'
-                  } transition-colors`}>
-                    <feature.icon className="h-6 w-6" />
-                  </div>
-                  <CardTitle className="text-lg">
-                    {feature.title}
+                  <div className="flex items-start justify-between gap-2">
+                    <div className={`inline-flex h-12 w-12 items-center justify-center rounded-lg ${
+                      feature.highlight 
+                        ? 'bg-gradient-to-br from-primary to-accent text-primary-foreground' 
+                        : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground'
+                    } transition-colors`}>
+                      <feature.icon className="h-6 w-6" />
+                    </div>
                     {feature.highlight && (
-                      <span className="ml-2 inline-block text-xs font-semibold text-primary">КИЛЛЕР-ФИЧА</span>
+                      <Badge variant="default" className="bg-gradient-to-r from-primary to-accent border-0 shadow-sm p-1.5">
+                        <Star className="h-3.5 w-3.5 fill-current" />
+                      </Badge>
                     )}
+                  </div>
+                  <CardTitle className="text-lg mt-4">
+                    {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
