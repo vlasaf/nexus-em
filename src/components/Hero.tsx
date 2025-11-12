@@ -23,7 +23,7 @@ export const Hero = ({
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-HR копайлотом</span>
           </h1>
           
-          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Оцифровка штата • Выбор лучших кандидатов • Прогноз рисков и совместимости • AI-подсказки действий • Прозрачные дашборды</p>
+          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Оцифровка штата • Выбор лучших кандидатов • Прогноз рисков и совместимости • Формирование команд • AI-подсказки действий • Прозрачные дашборды</p>
           
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" onClick={onOpenDemo} className="group w-full sm:w-auto">
