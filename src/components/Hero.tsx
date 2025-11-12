@@ -19,11 +19,12 @@ export const Hero = ({
           </div>
           
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Снижайте текучесть и ускоряйте закрытие позиций с{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-HR копайлотом</span>
+            Точное{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AI-психопрофилирование</span>
+            {" "}сотрудников и кандидатов для умных HR-решений
           </h1>
           
-          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Оцифровка штата • Выбор лучших кандидатов • Прогноз рисков и совместимости • Формирование команд • AI-подсказки действий • Прозрачные дашборды</p>
+          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">Глубокий анализ личности • AI-расшифровка характеристик • Прогноз совместимости • Персональные рекомендации по работе с каждым • Снижение текучести и ошибок найма</p>
           
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" onClick={onOpenDemo} className="group w-full sm:w-auto">
