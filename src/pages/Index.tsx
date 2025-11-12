@@ -7,8 +7,6 @@ import { UseCases } from "@/components/UseCases";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Features } from "@/components/Features";
 import { Integrations } from "@/components/Integrations";
-import { Security } from "@/components/Security";
-import { Personas } from "@/components/Personas";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -34,8 +32,6 @@ const Index = () => {
       <HowItWorks />
       <Features />
       <Integrations />
-      <Security />
-      <Personas />
       <FAQ />
       <FinalCTA onOpenDemo={() => setDemoModalOpen(true)} />
       <Footer />
