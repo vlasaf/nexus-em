@@ -5,6 +5,7 @@ import { ROICalculator } from "@/components/ROICalculator";
 import { UseCases } from "@/components/UseCases";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Features } from "@/components/Features";
+import { InterfaceShowcase } from "@/components/InterfaceShowcase";
 import { Integrations } from "@/components/Integrations";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -41,6 +42,10 @@ const Index = () => {
       
       <div id="how-it-works" className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
         <HowItWorks />
+      </div>
+      
+      <div className="animate-fade-in" style={{ animationDelay: '0.55s', animationFillMode: 'both' }}>
+        <InterfaceShowcase />
       </div>
       
       <div id="integrations" className="animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
