@@ -10,6 +10,7 @@ import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { DemoModal } from "@/components/DemoModal";
+import { ProductShowcase } from "@/components/ProductShowcase";
 
 const Index = () => {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
@@ -29,6 +30,10 @@ const Index = () => {
       
       <div id="features" className="animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
         <Features />
+      </div>
+      
+      <div className="animate-fade-in" style={{ animationDelay: '0.25s', animationFillMode: 'both' }}>
+        <ProductShowcase />
       </div>
       
       <div id="use-cases" className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
