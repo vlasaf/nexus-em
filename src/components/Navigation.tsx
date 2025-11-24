@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowUp } from "lucide-react";
+import { Menu, X, ArrowUp, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface NavigationProps {
-  onOpenDemo: () => void;
-}
-
-export const Navigation = ({ onOpenDemo }: NavigationProps) => {
+export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -89,8 +85,11 @@ export const Navigation = ({ onOpenDemo }: NavigationProps) => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Button onClick={onOpenDemo} size="sm">
-                Запросить демо
+              <Button asChild size="sm">
+                <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
+                  <Send className="mr-2 h-4 w-4" />
+                  Связаться через Telegram
+                </a>
               </Button>
             </div>
 
@@ -126,8 +125,11 @@ export const Navigation = ({ onOpenDemo }: NavigationProps) => {
                 {item.label}
               </button>
             ))}
-            <Button onClick={onOpenDemo} className="w-full mt-4">
-              Запросить демо
+            <Button asChild className="w-full mt-4">
+              <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
+                <Send className="mr-2 h-4 w-4" />
+                Связаться через Telegram
+              </a>
             </Button>
           </div>
         </div>

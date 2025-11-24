@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { ROICalculator } from "@/components/ROICalculator";
@@ -9,10 +8,8 @@ import { Integrations } from "@/components/Integrations";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
-import { DemoModal } from "@/components/DemoModal";
 
 const Index = () => {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
 
   const scrollToCalculator = () => {
     document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
@@ -20,10 +17,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Navigation onOpenDemo={() => setDemoModalOpen(true)} />
+      <Navigation />
       
       <Hero 
-        onOpenDemo={() => setDemoModalOpen(true)} 
         onOpenCalculator={scrollToCalculator}
       />
       
@@ -52,12 +48,10 @@ const Index = () => {
       </div>
       
       <div className="animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
-        <FinalCTA onOpenDemo={() => setDemoModalOpen(true)} />
+        <FinalCTA />
       </div>
       
       <Footer />
-      
-      <DemoModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
     </div>
   );
 };
