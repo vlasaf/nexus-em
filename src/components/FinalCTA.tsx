@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 
-interface FinalCTAProps {
-  onOpenDemo: () => void;
-}
-
-export const FinalCTA = ({ onOpenDemo }: FinalCTAProps) => {
+export const FinalCTA = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary to-accent py-24">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCIgc3Ryb2tlPSJoc2woMCAwJSAxMDAlIC8gMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
@@ -25,12 +21,14 @@ export const FinalCTA = ({ onOpenDemo }: FinalCTAProps) => {
             <Button 
               size="lg" 
               variant="secondary"
-              onClick={onOpenDemo}
+              asChild
               className="group w-full sm:w-auto"
             >
-              <Calendar className="mr-2 h-5 w-5" />
-              Запросить демо
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
+                <Send className="mr-2 h-5 w-5" />
+                Связаться через Telegram
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
           </div>
 

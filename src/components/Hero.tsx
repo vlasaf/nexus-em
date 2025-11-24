@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calculator, Play } from "lucide-react";
+import { ArrowRight, Calculator, Play, Send } from "lucide-react";
 interface HeroProps {
-  onOpenDemo: () => void;
   onOpenCalculator: () => void;
 }
 export const Hero = ({
-  onOpenDemo,
   onOpenCalculator
 }: HeroProps) => {
   return <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-secondary/30 pt-32 pb-20 lg:pt-40 lg:pb-32">
@@ -27,9 +25,12 @@ export const Hero = ({
           <p className="mb-8 text-lg text-muted-foreground sm:text-xl animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>Научно валидированная методология оценки личности • AI-расшифровка характеристик и прогноз совместимости • Персональные рекомендации по работе с каждым • Снижение текучести и ошибок найма</p>
           
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-            <Button size="lg" onClick={onOpenDemo} className="group w-full sm:w-auto">
-              Запросить демо
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button size="lg" asChild className="group w-full sm:w-auto">
+              <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
+                <Send className="mr-2 h-4 w-4" />
+                Связаться через Telegram
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
             
             <Button size="lg" variant="outline" onClick={onOpenCalculator} className="w-full sm:w-auto">
