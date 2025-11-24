@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { ROICalculator } from "@/components/ROICalculator";
+import { PricingTiers } from "@/components/PricingTiers";
 import { UseCases } from "@/components/UseCases";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Features } from "@/components/Features";
@@ -33,6 +34,10 @@ const Index = () => {
       
       <div id="calculator" className="animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
         <ROICalculator />
+      </div>
+      
+      <div id="pricing" className="animate-fade-in" style={{ animationDelay: '0.45s', animationFillMode: 'both' }}>
+        <PricingTiers />
       </div>
       
       <div id="how-it-works" className="animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
