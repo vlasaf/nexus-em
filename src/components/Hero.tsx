@@ -28,7 +28,7 @@ export const Hero = ({
             <Button size="lg" asChild className="group w-full sm:w-auto">
               <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
                 <Send className="mr-2 h-4 w-4" />
-                Связаться через Telegram
+                Связаться в Telegram
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

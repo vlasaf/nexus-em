@@ -26,7 +26,7 @@ export const FinalCTA = () => {
             >
               <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
                 <Send className="mr-2 h-5 w-5" />
-                Связаться через Telegram
+                Связаться в Telegram
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
