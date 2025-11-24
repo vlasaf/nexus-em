@@ -88,7 +88,7 @@ export const Navigation = () => {
               <Button asChild size="sm">
                 <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
-                  Связаться через Telegram
+                  Связаться в Telegram
                 </a>
               </Button>
             </div>
@@ -128,7 +128,7 @@ export const Navigation = () => {
             <Button asChild className="w-full mt-4">
               <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
                 <Send className="mr-2 h-4 w-4" />
-                Связаться через Telegram
+                Связаться в Telegram
               </a>
             </Button>
           </div>
