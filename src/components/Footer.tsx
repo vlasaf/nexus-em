@@ -1,6 +1,8 @@
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,24 +12,24 @@ export const Footer = () => {
           <div className="mb-8">
             <h3 className="mb-4 text-lg font-semibold">Nexus</h3>
             <p className="text-sm text-muted-foreground">
-              AI-HR копилот для управления персоналом на основе научных данных
+              {t('footer.description')}
             </p>
           </div>
 
           <Separator className="my-8" />
 
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
-            <p>© {currentYear} Nexus. Все права защищены.</p>
+            <p>© {currentYear} Nexus. {t('footer.rights')}</p>
             
             <div className="flex gap-6">
               <a href="#" className="hover:text-foreground transition-colors">
-                Политика конфиденциальности
+                {t('footer.privacy')}
               </a>
               <a href="#" className="hover:text-foreground transition-colors">
-                Условия использования
+                {t('footer.terms')}
               </a>
               <a href="#" className="hover:text-foreground transition-colors">
-                Cookies
+                {t('footer.cookies')}
               </a>
             </div>
           </div>

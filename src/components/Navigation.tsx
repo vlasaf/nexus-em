@@ -1,12 +1,20 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowUp, Send } from "lucide-react";
+import { Menu, X, ArrowUp, Send, Languages } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 export const Navigation = () => {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'ru' ? 'en' : 'ru';
+    i18n.changeLanguage(newLang);
+    localStorage.setItem('language', newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,12 +49,12 @@ export const Navigation = () => {
   };
 
   const navItems = [
-    { label: "Возможности", id: "features" },
-    { label: "Кейсы", id: "use-cases" },
-    { label: "Калькулятор", id: "calculator" },
-    { label: "Внедрение", id: "how-it-works" },
-    { label: "Интеграции", id: "integrations" },
-    { label: "FAQ", id: "faq" },
+    { label: t('nav.features'), id: "features" },
+    { label: t('nav.useCases'), id: "use-cases" },
+    { label: t('nav.calculator'), id: "calculator" },
+    { label: t('nav.howItWorks'), id: "how-it-works" },
+    { label: t('nav.integrations'), id: "integrations" },
+    { label: t('nav.faq'), id: "faq" },
   ];
 
   return (
@@ -83,12 +91,21 @@ export const Navigation = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
+            {/* Language Toggle & CTA */}
+            <div className="hidden lg:flex items-center gap-3">
+              <Button 
+                variant="ghost" 
+                size="sm"
+                onClick={toggleLanguage}
+                className="gap-2"
+              >
+                <Languages className="h-4 w-4" />
+                {i18n.language === 'ru' ? 'EN' : 'RU'}
+              </Button>
               <Button asChild size="sm">
                 <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
                   <Send className="mr-2 h-4 w-4" />
-                  Связаться в Telegram
+                  {t('nav.contact')}
                 </a>
               </Button>
             </div>
@@ -125,10 +142,18 @@ export const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <Button 
+              variant="outline" 
+              onClick={toggleLanguage}
+              className="w-full gap-2"
+            >
+              <Languages className="h-4 w-4" />
+              {i18n.language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
+            </Button>
             <Button asChild className="w-full mt-4">
               <a href="https://t.me/electronicmushroom" target="_blank" rel="noopener noreferrer">
                 <Send className="mr-2 h-4 w-4" />
-                Связаться в Telegram
+                {t('nav.contact')}
               </a>
             </Button>
           </div>

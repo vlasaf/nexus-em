@@ -9,53 +9,56 @@ import {
   Repeat,
   Star
 } from "lucide-react";
-
-const features = [
-  {
-    icon: Users,
-    title: "Психопрофилирование",
-    description: "Глубокое психопрофилирование каждого человека на основе валидированной методологии, подтвержденной метаанализами экспериментальной психологии: тип характера, мотивация, стиль коммуникации, рабочие предпочтения. Полный психологический портрет с научной точностью.",
-    highlight: true,
-  },
-  {
-    icon: MessageSquare,
-    title: "AI-расшифровка и инструкции",
-    description: "AI анализирует психопрофиль и генерирует персональные рекомендации: как мотивировать, общаться, делегировать задачи этому человеку. Готовые сценарии для каждой ситуации.",
-    highlight: true,
-  },
-  {
-    icon: Target,
-    title: "Подбор лучших кандидатов",
-    description: "AI сравнивает существующие психопрофили и выбирает идеальное совпадение для роли и команды",
-  },
-  {
-    icon: AlertTriangle,
-    title: "AI-прогноз совместимости",
-    description: "AI анализирует психопрофили для предсказания конфликтов, командной динамики и рисков ухода",
-  },
-  {
-    icon: BarChart4,
-    title: "Дашборды и аналитика",
-    description: "Визуализация психопрофилей команды, метрик совместимости и трендов",
-  },
-  {
-    icon: Repeat,
-    title: "Формирование команд",
-    description: "Оптимальный подбор людей в команды с учетом психологической совместимости",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const Features = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: Users,
+      title: t('features.list.profiling.title'),
+      description: t('features.list.profiling.description'),
+      highlight: true,
+    },
+    {
+      icon: MessageSquare,
+      title: t('features.list.aiAnalysis.title'),
+      description: t('features.list.aiAnalysis.description'),
+      highlight: true,
+    },
+    {
+      icon: Target,
+      title: t('features.list.selection.title'),
+      description: t('features.list.selection.description'),
+    },
+    {
+      icon: AlertTriangle,
+      title: t('features.list.compatibility.title'),
+      description: t('features.list.compatibility.description'),
+    },
+    {
+      icon: BarChart4,
+      title: t('features.list.dashboards.title'),
+      description: t('features.list.dashboards.description'),
+    },
+    {
+      icon: Repeat,
+      title: t('features.list.teamBuilding.title'),
+      description: t('features.list.teamBuilding.description'),
+    },
+  ];
+
   return (
-    <section className="py-24 bg-background scroll-mt-20">
+    <section className="py-24 bg-background scroll-mt-20" id="features">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Возможности платформы
+              {t('features.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Полный набор инструментов для управления персоналом на основе AI
+              {t('features.subtitle')}
             </p>
           </div>
 
