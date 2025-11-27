@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
+import { Slider } from "@/components/ui/slider";
 import { Download, HelpCircle, TrendingUp } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 interface CalculatorInputs {
@@ -44,6 +45,8 @@ const InputField = ({
   suffix,
   value,
   onChange,
+  min = 0,
+  max = 1000000,
 }: {
   label: string;
   field: keyof CalculatorInputs;
@@ -51,8 +54,10 @@ const InputField = ({
   onChange: (value: string) => void;
   tooltip?: string;
   suffix?: string;
+  min?: number;
+  max?: number;
 }) => (
-  <div className="space-y-1.5">
+  <div className="space-y-2">
     <div className="flex items-center gap-1.5">
       <Label htmlFor={field} className="text-xs font-medium">{label}</Label>
       {tooltip && (
@@ -77,7 +82,8 @@ const InputField = ({
         value={value === 0 ? '' : value}
         onChange={(e) => onChange(e.target.value)}
         className="pr-12"
-        min="0"
+        min={min}
+        max={max}
       />
       {suffix && (
         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
@@ -85,6 +91,14 @@ const InputField = ({
         </span>
       )}
     </div>
+    <Slider
+      value={[value]}
+      onValueChange={(values) => onChange(values[0].toString())}
+      min={min}
+      max={max}
+      step={max > 10000 ? 1000 : max > 1000 ? 100 : max > 100 ? 10 : 1}
+      className="w-full"
+    />
   </div>
 );
 
@@ -197,24 +211,24 @@ export const ROICalculator = () => {
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase">Основные показатели</h3>
-                  <InputField label="Численность штата" field="staff" suffix="чел" value={inputs.staff} onChange={(v) => handleInputChange('staff', v)} />
-                  <InputField label="Вакансий в месяц" field="vacanciesPerMonth" suffix="шт" value={inputs.vacanciesPerMonth} onChange={(v) => handleInputChange('vacanciesPerMonth', v)} />
-                  <InputField label="Полная стоимость сотрудника" field="monthlySalaryCost" suffix="₽/мес" tooltip="Зарплата + налоги + накладные расходы" value={inputs.monthlySalaryCost} onChange={(v) => handleInputChange('monthlySalaryCost', v)} />
+                  <InputField label="Численность штата" field="staff" suffix="чел" value={inputs.staff} onChange={(v) => handleInputChange('staff', v)} min={10} max={5000} />
+                  <InputField label="Вакансий в месяц" field="vacanciesPerMonth" suffix="шт" value={inputs.vacanciesPerMonth} onChange={(v) => handleInputChange('vacanciesPerMonth', v)} min={1} max={100} />
+                  <InputField label="Полная стоимость сотрудника" field="monthlySalaryCost" suffix="₽/мес" tooltip="Зарплата + налоги + накладные расходы" value={inputs.monthlySalaryCost} onChange={(v) => handleInputChange('monthlySalaryCost', v)} min={10000} max={1000000} />
                 </div>
 
                 <div className="space-y-3">
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase">Затраты на найм</h3>
-                  <InputField label="Внешнее закрытие вакансии" field="externalRecruitmentCost" suffix="₽" value={inputs.externalRecruitmentCost} onChange={(v) => handleInputChange('externalRecruitmentCost', v)} />
-                  <InputField label="Часов рекрутера на закрытие" field="recruiterHours" suffix="ч" value={inputs.recruiterHours} onChange={(v) => handleInputChange('recruiterHours', v)} />
-                  <InputField label="Ставка рекрутера" field="recruiterRate" suffix="₽/ч" value={inputs.recruiterRate} onChange={(v) => handleInputChange('recruiterRate', v)} />
-                  <InputField label="Часов менеджера на закрытие" field="managerHours" suffix="ч" value={inputs.managerHours} onChange={(v) => handleInputChange('managerHours', v)} />
-                  <InputField label="Ставка менеджера" field="managerRate" suffix="₽/ч" value={inputs.managerRate} onChange={(v) => handleInputChange('managerRate', v)} />
+                  <InputField label="Внешнее закрытие вакансии" field="externalRecruitmentCost" suffix="₽" value={inputs.externalRecruitmentCost} onChange={(v) => handleInputChange('externalRecruitmentCost', v)} min={5000} max={500000} />
+                  <InputField label="Часов рекрутера на закрытие" field="recruiterHours" suffix="ч" value={inputs.recruiterHours} onChange={(v) => handleInputChange('recruiterHours', v)} min={1} max={100} />
+                  <InputField label="Ставка рекрутера" field="recruiterRate" suffix="₽/ч" value={inputs.recruiterRate} onChange={(v) => handleInputChange('recruiterRate', v)} min={100} max={10000} />
+                  <InputField label="Часов менеджера на закрытие" field="managerHours" suffix="ч" value={inputs.managerHours} onChange={(v) => handleInputChange('managerHours', v)} min={1} max={100} />
+                  <InputField label="Ставка менеджера" field="managerRate" suffix="₽/ч" value={inputs.managerRate} onChange={(v) => handleInputChange('managerRate', v)} min={100} max={20000} />
                 </div>
 
                 <div className="space-y-3">
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase">Метрики эффективности</h3>
-                  <InputField label="Ранняя текучесть (90 дней)" field="earlyTurnover" suffix="%" tooltip="Процент сотрудников, уходящих в первые 90 дней" value={inputs.earlyTurnover} onChange={(v) => handleInputChange('earlyTurnover', v)} />
-                  <InputField label="Среднее время закрытия (TTF)" field="timeToFill" suffix="дн" tooltip="Среднее количество дней от публикации до закрытия вакансии" value={inputs.timeToFill} onChange={(v) => handleInputChange('timeToFill', v)} />
+                  <InputField label="Ранняя текучесть (90 дней)" field="earlyTurnover" suffix="%" tooltip="Процент сотрудников, уходящих в первые 90 дней" value={inputs.earlyTurnover} onChange={(v) => handleInputChange('earlyTurnover', v)} min={0} max={100} />
+                  <InputField label="Среднее время закрытия (TTF)" field="timeToFill" suffix="дн" tooltip="Среднее количество дней от публикации до закрытия вакансии" value={inputs.timeToFill} onChange={(v) => handleInputChange('timeToFill', v)} min={1} max={120} />
                 </div>
               </CardContent>
             </Card>
