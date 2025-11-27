@@ -1,58 +1,51 @@
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-const tiers = [
-  {
-    name: "Оцифровка персонала",
-    price: "3 000 ₽",
-    priceUnit: "за сотрудника",
-    features: [
-      "Личный профиль человека (мотивация, стиль мышления, риски)",
-      "Дашборды с метриками для заказчика (HR/руководителя)",
-      "AI-анализ компании на трех уровнях (Компания/команда/человек)",
-      "AI-консалтинг состояния компании и советы по увеличению эффективности управления персоналом",
-    ],
-    highlighted: false,
-  },
-  {
-    name: "Команды и найм",
-    price: "7 000 ₽",
-    originalPrice: "10 000 ₽",
-    priceUnit: "за сотрудника",
-    badge: "Популярный",
-    features: [
-      "Все возможности тарифа «Оцифровка персонала»",
-      "Формирование самых эффективных команд и отделов",
-      "Найм сотрудников с учетом всех тонкостей человеческих профилей",
-    ],
-    highlighted: true,
-  },
-  {
-    name: "AI-copilot",
-    price: "Индивидуально",
-    priceUnit: "",
-    badge: "Премиум",
-    features: [
-      "Все возможности тарифа «Команды и найм»",
-      "Ответы на любые HR-вопросы с помощью кастомного AI",
-      "Обучение на знаниях о вашей компании и психопрофилях работников",
-    ],
-    highlighted: false,
-  },
-];
-
 export const PricingTiers = () => {
+  const { t, i18n } = useTranslation();
+
+  const tiers = [
+    {
+      id: "digitization",
+      name: t('pricing.tiers.digitization.name'),
+      price: i18n.language === 'en' ? "$3,000" : "3 000 ₽",
+      priceUnit: t('pricing.tiers.digitization.priceUnit'),
+      features: t('pricing.tiers.digitization.features', { returnObjects: true }) as string[],
+      highlighted: false,
+    },
+    {
+      id: "teams",
+      name: t('pricing.tiers.teams.name'),
+      price: i18n.language === 'en' ? "$7,000" : "7 000 ₽",
+      originalPrice: i18n.language === 'en' ? "$10,000" : "10 000 ₽",
+      priceUnit: t('pricing.tiers.teams.priceUnit'),
+      badge: t('pricing.tiers.teams.badge'),
+      features: t('pricing.tiers.teams.features', { returnObjects: true }) as string[],
+      highlighted: true,
+    },
+    {
+      id: "copilot",
+      name: t('pricing.tiers.copilot.name'),
+      price: t('pricing.tiers.copilot.price'),
+      priceUnit: "",
+      badge: t('pricing.tiers.copilot.badge'),
+      features: t('pricing.tiers.copilot.features', { returnObjects: true }) as string[],
+      highlighted: false,
+    },
+  ];
+
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Тарифные планы
+              {t('pricing.title')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Выберите подходящий уровень решения для ваших HR-задач
+              {t('pricing.subtitle')}
             </p>
           </div>
 
@@ -108,7 +101,7 @@ export const PricingTiers = () => {
           <div className="mt-12 text-center">
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
               <Sparkles className="h-4 w-4 text-primary" />
-              Все тарифы включают техническую поддержку и регулярные обновления
+              {t('pricing.note')}
             </p>
           </div>
         </div>
