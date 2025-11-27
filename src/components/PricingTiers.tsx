@@ -17,7 +17,8 @@ const tiers = [
   },
   {
     name: "Команды и найм",
-    price: "5 000 ₽",
+    price: "7 000 ₽",
+    originalPrice: "10 000 ₽",
     priceUnit: "за сотрудника",
     badge: "Популярный",
     features: [
@@ -76,6 +77,11 @@ export const PricingTiers = () => {
                 <CardHeader className={tier.highlighted ? "bg-primary/5" : ""}>
                   <CardTitle className="text-2xl mb-4">{tier.name}</CardTitle>
                   <div className="space-y-1">
+                    {tier.originalPrice && (
+                      <div className="text-lg text-muted-foreground line-through">
+                        {tier.originalPrice}
+                      </div>
+                    )}
                     <div className="text-3xl font-bold text-primary">
                       {tier.price}
                     </div>
