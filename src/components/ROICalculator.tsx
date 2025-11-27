@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -103,6 +104,7 @@ const InputField = ({
 );
 
 export const ROICalculator = () => {
+  const { t, i18n } = useTranslation();
   const [inputs, setInputs] = useState<CalculatorInputs>(defaultInputs);
   const [results, setResults] = useState({
     screeningTime: 0,
@@ -164,9 +166,11 @@ export const ROICalculator = () => {
     });
   };
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('ru-RU', {
+    const locale = i18n.language === 'en' ? 'en-US' : 'ru-RU';
+    const currency = i18n.language === 'en' ? 'USD' : 'RUB';
+    return new Intl.NumberFormat(locale, {
       style: 'currency',
-      currency: 'RUB',
+      currency: currency,
       maximumFractionDigits: 0
     }).format(value);
   };
@@ -194,10 +198,10 @@ export const ROICalculator = () => {
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 text-center">
             <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Рассчитайте экономию для вашей компании
+              {t('calculator.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Узнайте, сколько вы сможете сэкономить через 1, 3 и 6 месяцев использования
+              {t('calculator.subtitle')}
             </p>
           </div>
 
@@ -205,30 +209,30 @@ export const ROICalculator = () => {
             {/* Inputs */}
             <Card className="transition-all duration-300 hover:shadow-xl">
               <CardHeader>
-                <CardTitle>Параметры компании</CardTitle>
-                <CardDescription>Введите данные вашей компании для точного расчета</CardDescription>
+                <CardTitle>{t('calculator.inputsTitle')}</CardTitle>
+                <CardDescription>{t('calculator.inputsSubtitle')}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">Основные показатели</h3>
-                  <InputField label="Численность штата" field="staff" suffix="чел" value={inputs.staff} onChange={(v) => handleInputChange('staff', v)} min={10} max={5000} />
-                  <InputField label="Вакансий в месяц" field="vacanciesPerMonth" suffix="шт" value={inputs.vacanciesPerMonth} onChange={(v) => handleInputChange('vacanciesPerMonth', v)} min={1} max={100} />
-                  <InputField label="Полная стоимость сотрудника" field="monthlySalaryCost" suffix="₽/мес" tooltip="Зарплата + налоги + накладные расходы" value={inputs.monthlySalaryCost} onChange={(v) => handleInputChange('monthlySalaryCost', v)} min={10000} max={1000000} />
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">{t('calculator.fields.basics')}</h3>
+                  <InputField label={t('calculator.fields.staff')} field="staff" suffix={t('calculator.units.people')} value={inputs.staff} onChange={(v) => handleInputChange('staff', v)} min={10} max={5000} />
+                  <InputField label={t('calculator.fields.vacancies')} field="vacanciesPerMonth" suffix={t('calculator.units.pieces')} value={inputs.vacanciesPerMonth} onChange={(v) => handleInputChange('vacanciesPerMonth', v)} min={1} max={100} />
+                  <InputField label={t('calculator.fields.salaryCost')} field="monthlySalaryCost" suffix={t('calculator.units.perMonth')} tooltip={t('calculator.fields.salaryCostTooltip')} value={inputs.monthlySalaryCost} onChange={(v) => handleInputChange('monthlySalaryCost', v)} min={10000} max={1000000} />
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">Затраты на найм</h3>
-                  <InputField label="Внешнее закрытие вакансии" field="externalRecruitmentCost" suffix="₽" value={inputs.externalRecruitmentCost} onChange={(v) => handleInputChange('externalRecruitmentCost', v)} min={5000} max={500000} />
-                  <InputField label="Часов рекрутера на закрытие" field="recruiterHours" suffix="ч" value={inputs.recruiterHours} onChange={(v) => handleInputChange('recruiterHours', v)} min={1} max={100} />
-                  <InputField label="Ставка рекрутера" field="recruiterRate" suffix="₽/ч" value={inputs.recruiterRate} onChange={(v) => handleInputChange('recruiterRate', v)} min={100} max={10000} />
-                  <InputField label="Часов менеджера на закрытие" field="managerHours" suffix="ч" value={inputs.managerHours} onChange={(v) => handleInputChange('managerHours', v)} min={1} max={100} />
-                  <InputField label="Ставка менеджера" field="managerRate" suffix="₽/ч" value={inputs.managerRate} onChange={(v) => handleInputChange('managerRate', v)} min={100} max={20000} />
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">{t('calculator.fields.hiringCosts')}</h3>
+                  <InputField label={t('calculator.fields.externalCost')} field="externalRecruitmentCost" suffix={t('calculator.units.rub')} value={inputs.externalRecruitmentCost} onChange={(v) => handleInputChange('externalRecruitmentCost', v)} min={5000} max={500000} />
+                  <InputField label={t('calculator.fields.recruiterHours')} field="recruiterHours" suffix={t('calculator.units.hours')} value={inputs.recruiterHours} onChange={(v) => handleInputChange('recruiterHours', v)} min={1} max={100} />
+                  <InputField label={t('calculator.fields.recruiterRate')} field="recruiterRate" suffix={t('calculator.units.perHour')} value={inputs.recruiterRate} onChange={(v) => handleInputChange('recruiterRate', v)} min={100} max={10000} />
+                  <InputField label={t('calculator.fields.managerHours')} field="managerHours" suffix={t('calculator.units.hours')} value={inputs.managerHours} onChange={(v) => handleInputChange('managerHours', v)} min={1} max={100} />
+                  <InputField label={t('calculator.fields.managerRate')} field="managerRate" suffix={t('calculator.units.perHour')} value={inputs.managerRate} onChange={(v) => handleInputChange('managerRate', v)} min={100} max={20000} />
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">Метрики эффективности</h3>
-                  <InputField label="Ранняя текучесть (90 дней)" field="earlyTurnover" suffix="%" tooltip="Процент сотрудников, уходящих в первые 90 дней" value={inputs.earlyTurnover} onChange={(v) => handleInputChange('earlyTurnover', v)} min={0} max={100} />
-                  <InputField label="Среднее время закрытия (TTF)" field="timeToFill" suffix="дн" tooltip="Среднее количество дней от публикации до закрытия вакансии" value={inputs.timeToFill} onChange={(v) => handleInputChange('timeToFill', v)} min={1} max={120} />
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase">{t('calculator.fields.metrics')}</h3>
+                  <InputField label={t('calculator.fields.turnover')} field="earlyTurnover" suffix={t('calculator.units.percent')} tooltip={t('calculator.fields.turnoverTooltip')} value={inputs.earlyTurnover} onChange={(v) => handleInputChange('earlyTurnover', v)} min={0} max={100} />
+                  <InputField label={t('calculator.fields.timeToFill')} field="timeToFill" suffix={t('calculator.units.days')} tooltip={t('calculator.fields.timeToFillTooltip')} value={inputs.timeToFill} onChange={(v) => handleInputChange('timeToFill', v)} min={1} max={120} />
                 </div>
               </CardContent>
             </Card>
@@ -239,43 +243,43 @@ export const ROICalculator = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="h-5 w-5 text-primary" />
-                    Ваша экономия
+                    {t('calculator.resultsTitle')}
                   </CardTitle>
-                  <CardDescription>Прогноз снижения затрат по периодам</CardDescription>
+                  <CardDescription>{t('calculator.resultsSubtitle')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Tabs defaultValue="month6" className="w-full">
                     <TabsList className="grid w-full grid-cols-3">
-                      <TabsTrigger value="month1">1 месяц</TabsTrigger>
-                      <TabsTrigger value="month3">3 месяца</TabsTrigger>
-                      <TabsTrigger value="month6">6 месяцев</TabsTrigger>
+                      <TabsTrigger value="month1">{t('calculator.periods.month1')}</TabsTrigger>
+                      <TabsTrigger value="month3">{t('calculator.periods.month3')}</TabsTrigger>
+                      <TabsTrigger value="month6">{t('calculator.periods.month6')}</TabsTrigger>
                     </TabsList>
                     
                     <TabsContent value="month1" className="mt-4 space-y-3">
                       <div className="text-center">
                         <div className="text-3xl font-bold text-primary">{formatCurrency(results.month1)}</div>
-                        <p className="mt-1 text-xs text-muted-foreground">Экономия в первый месяц (разгон 50%)</p>
+                        <p className="mt-1 text-xs text-muted-foreground">{t('calculator.periods.month1Note')}</p>
                       </div>
                     </TabsContent>
                     
                     <TabsContent value="month3" className="mt-4 space-y-3">
                       <div className="text-center">
                         <div className="text-3xl font-bold text-primary">{formatCurrency(results.month3)}</div>
-                        <p className="mt-1 text-xs text-muted-foreground">Накопленная экономия за 3 месяца</p>
+                        <p className="mt-1 text-xs text-muted-foreground">{t('calculator.periods.month3Note')}</p>
                       </div>
                     </TabsContent>
                     
                     <TabsContent value="month6" className="mt-4 space-y-3">
                       <div className="text-center">
                         <div className="text-3xl font-bold text-primary">{formatCurrency(results.month6)}</div>
-                        <p className="mt-1 text-xs text-muted-foreground">Накопленная экономия за 6 месяцев</p>
+                        <p className="mt-1 text-xs text-muted-foreground">{t('calculator.periods.month6Note')}</p>
                       </div>
                     </TabsContent>
                   </Tabs>
 
                   <div className="mt-4 space-y-3">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Ежемесячная экономия</span>
+                      <span className="text-muted-foreground">{t('calculator.periods.monthly')}</span>
                       <span className="font-semibold">{formatCurrency(results.total)}</span>
                     </div>
                   </div>
@@ -284,13 +288,13 @@ export const ROICalculator = () => {
 
               <Card className="transition-all duration-300 hover:shadow-xl">
                 <CardHeader>
-                  <CardTitle>Источники экономии</CardTitle>
-                  <CardDescription>Разбивка по направлениям эффекта</CardDescription>
+                  <CardTitle>{t('calculator.sourcesTitle')}</CardTitle>
+                  <CardDescription>{t('calculator.sourcesSubtitle')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span>Время скрининга (-40%)</span>
+                      <span>{t('calculator.sources.screening')}</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.screeningTime)}</span>
                     </div>
                     <Progress value={results.screeningTime / results.total * 100} className="h-2" />
@@ -298,7 +302,7 @@ export const ROICalculator = () => {
 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span>Внешние затраты (-20%)</span>
+                      <span>{t('calculator.sources.external')}</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.externalCosts)}</span>
                     </div>
                     <Progress value={results.externalCosts / results.total * 100} className="h-2" />
@@ -306,7 +310,7 @@ export const ROICalculator = () => {
 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span>Ранняя текучесть (-30%)</span>
+                      <span>{t('calculator.sources.turnover')}</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.turnoverReduction)}</span>
                     </div>
                     <Progress value={results.turnoverReduction / results.total * 100} className="h-2" />
@@ -314,7 +318,7 @@ export const ROICalculator = () => {
 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span>Время закрытия вакансии (-20%)</span>
+                      <span>{t('calculator.sources.ttf')}</span>
                       <span className="font-semibold text-primary">{formatCurrency(results.ttfReduction)}</span>
                     </div>
                     <Progress value={results.ttfReduction / results.total * 100} className="h-2" />
@@ -322,7 +326,7 @@ export const ROICalculator = () => {
 
                   <Button className="w-full mt-2" size="default">
                     <Download className="mr-2 h-4 w-4" />
-                    Получить расчет на почту
+                    {t('calculator.downloadBtn')}
                   </Button>
                 </CardContent>
               </Card>
