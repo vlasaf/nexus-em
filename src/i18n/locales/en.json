@@ -1,0 +1,302 @@
+{
+  "nav": {
+    "features": "Features",
+    "useCases": "Use Cases",
+    "calculator": "Calculator",
+    "howItWorks": "Implementation",
+    "integrations": "Integrations",
+    "faq": "FAQ",
+    "contact": "Contact on Telegram"
+  },
+  "hero": {
+    "badge": "AI Copilot for HR Solutions",
+    "title": {
+      "part1": "Precise",
+      "highlight": "psycho-profiling",
+      "part2": "of employees and candidates for smart HR decisions"
+    },
+    "subtitle": "Scientifically validated personality assessment methodology • AI-powered trait analysis and compatibility forecasting • Personalized recommendations for working with each person • Reduced turnover and hiring mistakes",
+    "contactBtn": "Contact on Telegram",
+    "calculatorBtn": "Calculate Savings",
+    "metrics": {
+      "turnover": "Early turnover in first 90 days",
+      "timeToFill": "Time to close position",
+      "screening": "Candidate screening time"
+    }
+  },
+  "features": {
+    "title": "Platform Features",
+    "subtitle": "Complete toolkit for AI-powered personnel management",
+    "list": {
+      "profiling": {
+        "title": "Psycho-profiling",
+        "description": "Deep psycho-profiling of each person based on validated methodology confirmed by meta-analyses in experimental psychology: personality type, motivation, communication style, work preferences. Complete psychological portrait with scientific precision."
+      },
+      "aiAnalysis": {
+        "title": "AI Analysis & Instructions",
+        "description": "AI analyzes the psycho-profile and generates personalized recommendations: how to motivate, communicate, delegate tasks to this person. Ready-made scenarios for every situation."
+      },
+      "selection": {
+        "title": "Best Candidate Selection",
+        "description": "AI compares existing psycho-profiles and selects the perfect match for the role and team"
+      },
+      "compatibility": {
+        "title": "AI Compatibility Forecast",
+        "description": "AI analyzes psycho-profiles to predict conflicts, team dynamics, and turnover risks"
+      },
+      "dashboards": {
+        "title": "Dashboards & Analytics",
+        "description": "Visualization of team psycho-profiles, compatibility metrics, and trends"
+      },
+      "teamBuilding": {
+        "title": "Team Formation",
+        "description": "Optimal people selection for teams considering psychological compatibility"
+      }
+    }
+  },
+  "useCases": {
+    "title": "Use Cases",
+    "subtitle": "From hiring to talent management — AI helps at every stage",
+    "list": {
+      "hiring": {
+        "title": "Hiring",
+        "problem": "Unclear if candidate fits team and company culture",
+        "solution": "Validated methodology creates candidate psycho-profile, AI compares with team profiles and provides compatibility forecast and work recommendations",
+        "result": "30% reduction in early turnover, perfect culture fit"
+      },
+      "promotions": {
+        "title": "Promotions & Assignments",
+        "problem": "Risk of appointing wrong person to key position",
+        "solution": "Assessment of growth potential, compatibility with new role and team",
+        "result": "45% increase in successful appointments, fewer conflicts during transitions"
+      },
+      "teams": {
+        "title": "Team Formation",
+        "problem": "Teams conflict due to personality incompatibility",
+        "solution": "AI analyzes existing psycho-profiles and selects optimal team composition. Warns about potential conflicts and provides management recommendations",
+        "result": "25% increase in team productivity, 40% fewer conflicts"
+      },
+      "talent": {
+        "title": "Talent Management",
+        "problem": "Don't understand employee motivation, losing best people",
+        "solution": "Psycho-profile reveals true motivators of each person. AI interprets data and provides personalized recommendations for retention, development, and motivation",
+        "result": "35% increase in key employee retention, targeted work with each person"
+      }
+    },
+    "taskLabel": "Challenge:",
+    "solutionLabel": "What the bot does:"
+  },
+  "calculator": {
+    "title": "Calculate Savings for Your Company",
+    "subtitle": "Find out how much you can save in 1, 3, and 6 months of use",
+    "inputsTitle": "Company Parameters",
+    "inputsSubtitle": "Enter your company data for accurate calculation",
+    "resultsTitle": "Your Savings",
+    "resultsSubtitle": "Cost reduction forecast by period",
+    "sourcesTitle": "Savings Sources",
+    "sourcesSubtitle": "Breakdown by impact areas",
+    "fields": {
+      "basics": "Key Metrics",
+      "staff": "Staff Size",
+      "vacancies": "Vacancies per Month",
+      "salaryCost": "Full Employee Cost",
+      "salaryCostTooltip": "Salary + taxes + overhead",
+      "hiringCosts": "Hiring Costs",
+      "externalCost": "External Position Closure",
+      "recruiterHours": "Recruiter Hours per Closure",
+      "recruiterRate": "Recruiter Rate",
+      "managerHours": "Manager Hours per Closure",
+      "managerRate": "Manager Rate",
+      "metrics": "Efficiency Metrics",
+      "turnover": "Early Turnover (90 days)",
+      "turnoverTooltip": "Percentage of employees leaving in first 90 days",
+      "timeToFill": "Average Time to Fill (TTF)",
+      "timeToFillTooltip": "Average days from posting to closing position"
+    },
+    "units": {
+      "people": "ppl",
+      "pieces": "pc",
+      "perMonth": "$/mo",
+      "rub": "$",
+      "hours": "h",
+      "perHour": "$/h",
+      "percent": "%",
+      "days": "d"
+    },
+    "periods": {
+      "month1": "1 month",
+      "month3": "3 months",
+      "month6": "6 months",
+      "month1Note": "First month savings (50% ramp-up)",
+      "month3Note": "Cumulative savings over 3 months",
+      "month6Note": "Cumulative savings over 6 months",
+      "monthly": "Monthly savings"
+    },
+    "sources": {
+      "screening": "Screening time (-40%)",
+      "external": "External costs (-20%)",
+      "turnover": "Early turnover (-30%)",
+      "ttf": "Time to fill (-20%)"
+    },
+    "downloadBtn": "Get calculation by email"
+  },
+  "pricing": {
+    "title": "Pricing Plans",
+    "subtitle": "Choose the right solution level for your HR tasks",
+    "note": "All plans include technical support and regular updates",
+    "tiers": {
+      "digitization": {
+        "name": "Personnel Digitization",
+        "priceUnit": "per employee",
+        "features": [
+          "Personal profile (motivation, thinking style, risks)",
+          "Dashboards with metrics for customer (HR/manager)",
+          "AI company analysis at three levels (Company/team/person)",
+          "AI consulting on company state and advice to increase personnel management efficiency"
+        ]
+      },
+      "teams": {
+        "name": "Teams & Hiring",
+        "badge": "Popular",
+        "priceUnit": "per employee",
+        "features": [
+          "All 'Personnel Digitization' features",
+          "Formation of most effective teams and departments",
+          "Employee hiring considering all nuances of human profiles"
+        ]
+      },
+      "copilot": {
+        "name": "AI-copilot",
+        "price": "Custom",
+        "badge": "Premium",
+        "features": [
+          "All 'Teams & Hiring' features",
+          "Answers to any HR questions using custom AI",
+          "Training on your company knowledge and employee psycho-profiles"
+        ]
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "Implementation Process",
+    "subtitle": "Simple implementation process — from digitization to AI recommendations",
+    "steps": {
+      "profiling": {
+        "title": "Psycho-profiling",
+        "description": "Personality assessment of each person based on our highly validated methodology confirmed by meta-analyses in experimental psychology: personality type, motivation, work style, communication"
+      },
+      "integrations": {
+        "title": "Integrations",
+        "description": "Connect all resources where you track people: ATS, HRIS, calendars. All information about each person in the company and during hiring feeds into AI context, improving quality of analysis and recommendations. Data updates automatically in real-time"
+      },
+      "analysis": {
+        "title": "AI Compatibility Analysis",
+        "description": "AI compares psycho-profiles to forecast team dynamics, conflicts, and interaction effectiveness"
+      },
+      "recommendations": {
+        "title": "AI Analysis & Recommendations",
+        "description": "AI interprets psycho-profile and generates personalized recommendations for working with each person: how to motivate, communicate, delegate tasks"
+      }
+    },
+    "timeline": "Full implementation takes 2-4 weeks. First results visible in a month.",
+    "note": "Minimal setup on your side — we handle the main work"
+  },
+  "integrations": {
+    "title": "Integrations with Your Systems",
+    "subtitle": "Working via API and data import — minimal manual work",
+    "list": {
+      "ats": {
+        "name": "ATS Systems",
+        "description": "LinkedIn, Indeed, Greenhouse"
+      },
+      "hris": {
+        "name": "HRIS",
+        "description": "SAP, Workday, BambooHR"
+      },
+      "calendars": {
+        "name": "Calendars",
+        "description": "Google Calendar, Outlook"
+      },
+      "email": {
+        "name": "Email",
+        "description": "Gmail, Outlook, Yahoo"
+      },
+      "spreadsheets": {
+        "name": "Spreadsheets",
+        "description": "Excel, Google Sheets"
+      },
+      "api": {
+        "name": "API",
+        "description": "REST API for custom integrations"
+      }
+    },
+    "customTitle": "Don't see needed integration?",
+    "customDescription": "We'll develop custom integration for your systems via REST API"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to popular questions about product and implementation",
+    "list": [
+      {
+        "question": "Where does analysis data come from?",
+        "answer": "We integrate with your HR systems (ATS, HRIS) and supplement with employee competency assessment through validated tests. Data can also be uploaded manually via Excel/CSV."
+      },
+      {
+        "question": "How accurate is the assessment methodology?",
+        "answer": "Our psycho-profiling methodology is based on peer-reviewed research and meta-analyses in experimental psychology with validity of 0.7-0.8 (correlation with real business results). AI is used to interpret profiles and generate recommendations, improving accuracy over time."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Full implementation — 2-4 weeks. First week we digitize staff and set up integrations, second — train team and launch first dashboards. First results visible in a month."
+      },
+      {
+        "question": "How do you ensure data security?",
+        "answer": "AES-256 encryption, access control, audit log, GDPR compliance. Hosting options: cloud (AWS/Azure) or on-premise. Regular pentests and security audits."
+      },
+      {
+        "question": "How is ROI calculated?",
+        "answer": "ROI comes from four sources: recruiter time savings (-40%), reduced external agency costs (-20%), decreased early turnover (-30%), faster position closure (-20%). Calculator on page shows estimate for your company."
+      },
+      {
+        "question": "Can it be used only for hiring?",
+        "answer": "Yes, you can start with just the hiring module (best-candidate selection). Other modules (talent management, team formation, risk prediction) can be added later as needed."
+      },
+      {
+        "question": "How does personnel digitization work?",
+        "answer": "Employees take tests taking about an hour: competencies, personality type, motivation. We use highly validated methodology confirmed by meta-analyses in experimental psychology. AI then interprets results into clear insights and recommendations."
+      },
+      {
+        "question": "What if the model makes a mistake?",
+        "answer": "AI provides recommendations, but final decision always stays with humans. We show model confidence level and explain what data the conclusion is based on. Accuracy improves over time through feedback loop."
+      },
+      {
+        "question": "Do you have clients in our industry?",
+        "answer": "We work with IT, e-commerce, fintech, manufacturing. Each industry has its specifics, so we adapt models to your processes and position requirements."
+      },
+      {
+        "question": "How does post-implementation support work?",
+        "answer": "Dedicated customer success manager, weekly syncs first 2 months, then monthly. 24/7 technical support via chat and email. Regular product updates at no extra charge."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Start HR Transformation Today",
+    "subtitle": "Request a demo and learn how AI will help reduce turnover, speed up hiring, and save up to $50K in six months",
+    "contactBtn": "Contact on Telegram",
+    "timeline": {
+      "implementation": "Implementation",
+      "firstResults": "To first results",
+      "fullPayback": "To full payback",
+      "weeks": "2-4 weeks",
+      "month": "1 month",
+      "months": "6 months"
+    }
+  },
+  "footer": {
+    "description": "AI-HR copilot for data-driven personnel management",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "cookies": "Cookies"
+  }
+}
