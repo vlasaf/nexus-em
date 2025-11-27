@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calculator, Play, Send } from "lucide-react";
+import { ArrowRight, Calculator, Download, Play, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 interface HeroProps {
@@ -42,6 +42,13 @@ export const Hero = ({ onOpenCalculator }: HeroProps) => {
             <Button size="lg" variant="outline" onClick={onOpenCalculator} className="w-full sm:w-auto">
               <Calculator className="mr-2 h-4 w-4" />
               {t('hero.calculatorBtn')}
+            </Button>
+
+            <Button size="lg" variant="secondary" asChild className="w-full sm:w-auto">
+              <a href="/Psychometric_Report_Example.pdf" download="Psychometric_Report_Example.pdf">
+                <Download className="mr-2 h-4 w-4" />
+                {t('hero.downloadExampleBtn')}
+              </a>
             </Button>
           </div>
           
