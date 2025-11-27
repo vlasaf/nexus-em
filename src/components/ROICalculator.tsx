@@ -323,11 +323,6 @@ export const ROICalculator = () => {
                     </div>
                     <Progress value={results.ttfReduction / results.total * 100} className="h-2" />
                   </div>
-
-                  <Button className="w-full mt-2" size="default">
-                    <Download className="mr-2 h-4 w-4" />
-                    {t('calculator.downloadBtn')}
-                  </Button>
                 </CardContent>
               </Card>
             </div>
